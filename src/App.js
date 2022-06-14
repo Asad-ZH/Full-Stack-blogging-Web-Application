@@ -1,19 +1,17 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import TextForm from "./components/TextForm.js";
 
 function App() {
   return (
     <>
-      <nav className="navbar bg-light">
-        <form className="container-fluid justify-content-start">
-          <button className="btn btn-outline-success me-2" type="button">
-            Main button
-          </button>
-          <button className="btn btn-sm btn-outline-secondary me-2" type="button">
-            Smaller button
-          </button>
-        </form>
-      </nav>
-    </>
+    <Navbar home="TextUtils" aboutText="about Us" />
+    <div className="container my-3" >
+      <TextForm heading = "Enter Random keywords"/>
+      {/* <About/> */}
+    </div>
+      </>
   );
 }
 
