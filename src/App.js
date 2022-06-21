@@ -5,7 +5,7 @@ import TextForm from "./components/TextForm.js";
 import { useState } from "react";
 import React from "react";
 import Alert from "./components/Alert";
-import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -43,17 +43,10 @@ function App() {
       <Alert alert={alert} />
 
       <div className="container my-3">
-        <BrowserRouter>
-          <Router>
-            <Routes>
-              <Route
-                path="/"
-                element={<About />}
-              />
-              <Route exact path="/about" element={<About />} />
-            </Routes>
-          </Router>
-        </BrowserRouter>
+        <Routes>
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/" element={<TextForm />} />
+        </Routes>
       </div>
     </>
   );
